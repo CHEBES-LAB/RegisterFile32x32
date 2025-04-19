@@ -2,3 +2,6 @@ Running: xsim.dir/Register32x32_tb_behav/xsimk.exe -simmode gui -wdb Register32x
 Design successfully loaded
 Design Loading Memory Usage: 28580 KB (Peak: 28580 KB)
 Design Loading CPU Usage: 703 ms
+Simulation completed
+Simulation Memory Usage: 29428 KB (Peak: 29428 KB)
+Simulation CPU Usage: 796 ms
