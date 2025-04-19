@@ -25,10 +25,21 @@ end Register32x32;
 architecture Behavioral of Register32x32 is
     type reg_array is array (0 to 31) of STD_LOGIC_VECTOR (31 downto 0);
     signal registers : reg_array;
+    signal STARTUP : boolean := true;
 
 begin
     process(CLK, EN, WR_EN)
     begin
+        if STARTUP=true then
+            registers <= (  0 => X"0000010f",
+                            1 => X"00110100",
+                            2 => X"00000110",
+                            3 => X"00011000",
+                            others => (others => '0'));
+            D_OUT_1 <= (others => 'X');
+            D_OUT_2 <= (others => 'X');
+            STARTUP <= false;
+        end if; 
         if rising_edge(CLK) then
             if EN = '1' then
                 if WR_EN = '1' then
